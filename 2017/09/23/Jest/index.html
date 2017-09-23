@@ -16,7 +16,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="Anniversary Two"/>
+      <meta property="og:title" content="React Note -- fundamental and lifecycle"/>
   
   <!--Open Graph Description-->
   
@@ -33,7 +33,7 @@
 
   <!-- Title -->
   
-  <title>Anniversary Two - Hexo</title>
+  <title>React Note -- fundamental and lifecycle - Hexo</title>
 
 
   <link rel="shortcut icon" href="https://hexo.io/icon/favicon-96x96.png">
@@ -113,28 +113,41 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            Anniversary Two
+            React Note -- fundamental and lifecycle
             
           </h1>
           <p class="posted-on">
-          2017-08-29
+          2017-09-23
           </p>
           <div class="tags-links">
             
+              
+                <a href="/tags/React/" rel="tag">
+                  React
+                </a>
               
             
           </div>
         </div>
         <!-- Post Main Content -->
         <div class="entry-content">
-          <h2 id="记在七夕"><a href="#记在七夕" class="headerlink" title="记在七夕"></a>记在七夕</h2><p>前两天和嘉园1512聚餐。席间又说起你。</p>
-<p>他们又一次笑得直不起腰，说当时笨拙的我，说出谋划策的他们，说那些个毫无进展的夜晚。以前每次说起这个我还有些不服气，想我自己深思熟虑，哪是他们这些钢铁直男能体会到的精深奥义。</p>
-<p>但是那天我只觉得他们多说一些才好。</p>
-<p>也许是那天外面不停下的秋雨，也许是因为去了熟悉的餐厅，时间的流逝变得分外真切。灯光下我想起很多画面：冬日暖阳下的胡同，穿越钢筋森林的冷风，日式小酒馆的碰杯，还有路灯下的拥抱。那个时刻我想起来的每个比喻，每个画面，应该都是换着法儿在和你说，我真想你。</p>
-<p>我每天的行程，由于马上要来的面试，变得规律又乏味。在分开的一年多里，你看了我没看过的书，吃了我没吃过的美食，也去了很多我没有去过的地方。我好像没法体验到你生活的美好。</p>
-<p>然而这一年的聚少离多却逐渐让我释然：我们本就无法体验到所有共有的美好。你有新奇体验，我有埋头苦读；你对我说你那儿的龙虾个顶个的大，我和你说我每日素食少餐，可以少些横肉；你说你boss，同事人都不错，我说我和那两个傻缺从东直门一路走到积水潭。</p>
-<p>我读书是为了今后能与你体验更多，我减肥是因为你想要我有个更健康的身体，我从东直门走到积水潭，可能是因为…真的傻逼。</p>
-<p>你瞧，我们的生活有那么多不同的好。可正因为有了彼此，我们可以体验两倍的好。</p>
+          <h1 id="fundamental"><a href="#fundamental" class="headerlink" title="fundamental"></a>fundamental</h1><h2 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h2><p>from father to children: <em>this.props</em> is read-only.</p>
+<p>from children to father</p>
+<h2 id="propTypes"><a href="#propTypes" class="headerlink" title="propTypes"></a>propTypes</h2><p>declare the required props and its specific type of a component.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">propTypes: &#123;</div><div class="line">      name: React.PropTypes.string.isRequired</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>好处： 预先声明组件期望接收的参数，让使用者便于阅读；React运行时会验证属性值的有效性，是否存在以及是否是正确的类型</p>
+<p><code>getDefaultProps</code> is used for setting up initial value for the non-required propositions.</p>
+<h2 id="Event-handling"><a href="#Event-handling" class="headerlink" title="Event handling"></a>Event handling</h2><p><em>合成事件</em> 与 <em>事件委托</em></p>
+<h2 id="Props-and-State"><a href="#Props-and-State" class="headerlink" title="Props and State"></a>Props and State</h2><p>props =&gt; outer<br>state =&gt; inner<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">getInitialState() =&gt; &#123;</div><div class="line">    return &#123;</div><div class="line">      text: this.props.defaultValue //initialize the state with a props, means we should always use state rather than props inside the render?</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="change-state-from-outer-component-father"><a href="#change-state-from-outer-component-father" class="headerlink" title="change state from outer component (father)"></a>change state from outer component (father)</h2><p>when father send a new props to the child, the child will get a new props but not a new state. state may not be changed, dealing with it by:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">componentWillReceiveProps = (newProps) =&gt; &#123;</div><div class="line">    this.setState(&#123;</div><div class="line">       text: newProps.defaultValue</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><em>question</em>: will new props will change constructor? usually the state is initialized inside constructor.</p>
+<h1 id="lifecycle"><a href="#lifecycle" class="headerlink" title="lifecycle"></a>lifecycle</h1><p><a href="http://busypeoples.github.io/post/react-component-lifecycle/" target="_blank" rel="external">react lifecycle</a><br><a href="https://facebook.github.io/react/docs/react-component.html" target="_blank" rel="external">lifecycle official document</a></p>
+<blockquote>
+<p>componentWillMount and componentDidlMount will only be called once when the component is created<br>we should include data initialization in <code>componentDidlMount</code></p>
+</blockquote>
+<h2 id="improve-performance"><a href="#improve-performance" class="headerlink" title="improve performance"></a>improve performance</h2><blockquote>
+<p>pure component: the <em>render()</em> function in this component does not have any functional calling (i.e. ascyc API call) except for this.props and this.state</p>
+</blockquote>
+<p>use <em>shouldComponentUpdate(nextProps, nextState)</em> to stop unchanged pure component render to improve performance.</p>
 
         </div>
       </article>
@@ -153,13 +166,9 @@
     <!-- Pre or Next -->
     <div class="nav-links">
       
-        <div class="nav-previous">
-          <a href="/2017/09/23/Jest/" rel="prev"><span class="meta-arraw meta-arraw-left"></span> Older Posts</a>
-        </div>
-      
       
         <div class="nav-next">
-          <a href="/2016/09/14/One/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+          <a href="/2017/08/29/Two/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
         </div>
       
     </div>
