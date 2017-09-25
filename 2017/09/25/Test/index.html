@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="Deer Lu">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="Testing javascript Note"/>
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="Hexo"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>Testing javascript Note - Hexo</title>
+
+
+  <link rel="shortcut icon" href="https://hexo.io/icon/favicon-96x96.png">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!----------------------------
+  https://github.com/GallenHu/hexo-theme-Daily
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="images/deer.png" alt="Hexo" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  archive
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            Testing javascript Note
+            
+          </h1>
+          <p class="posted-on">
+          2017-09-25
+          </p>
+          <div class="tags-links">
+            
+              
+                <a href="/tags/Test React/" rel="tag">
+                  Test React
+                </a>
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <h1 id="test-javascript-demo"><a href="#test-javascript-demo" class="headerlink" title="test-javascript-demo"></a>test-javascript-demo</h1><p>Hi there, this is a simple note of unit-testing and end-to-end in react with jest and cypress. Learn from: <a href="https://github.com/kentcdodds/testing-workshop" target="_blank" rel="external">testing-javascrpt</a></p>
+<h2 id="Get-Started"><a href="#Get-Started" class="headerlink" title="Get Started"></a>Get Started</h2><p>The demo invovles <a href="https://yarnpkg.com/en/" target="_blank" rel="external">yarn</a>, <a href="http://facebook.github.io/jest/" target="_blank" rel="external">jest</a> and <a href="https://facebook.github.io/react/" target="_blank" rel="external">react</a>.</p>
+<h3 id="setup"><a href="#setup" class="headerlink" title="setup"></a>setup</h3><ol>
+<li>yarn</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew install yarn</div><div class="line">yarn init</div></pre></td></tr></table></figure>
+<ol>
+<li>jest</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add --dev jest</div></pre></td></tr></table></figure>
+<p>Add the following section to your package.json:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;scripts&quot;: &#123;</div><div class="line">    &quot;test&quot;: &quot;jest&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ol>
+<li>react</li>
+</ol>
+<p>Since this demo is more about testing, so it does not include react setup.</p>
+<h3 id="install-babel"><a href="#install-babel" class="headerlink" title="install babel"></a>install babel</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add --dev babel-core babel-preset-env</div></pre></td></tr></table></figure>
+<p>then add “.babelrc”:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;presets&quot; : [&quot;env&quot;]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Simple-Start"><a href="#Simple-Start" class="headerlink" title="Simple Start"></a>Simple Start</h2><p>Let’s create a .js file and write a normal function, in our case, a ‘sum.js’ file in root directory.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function sum(a, b) &#123;</div><div class="line">  return a + b;</div><div class="line">&#125;</div><div class="line">module.exports = sum;</div></pre></td></tr></table></figure></p>
+<p>Then, create a directory called <code>__test__</code>, and create a file named sum.test.js.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const sum = require(&apos;../sum&apos;); //pay attention to the path</div><div class="line"></div><div class="line">test(&apos;adds 1 + 2 to equal 3&apos;, () =&gt; &#123;</div><div class="line">  expect(sum(1, 2)).toBe(3);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>Finally, run <strong>yarn test</strong> to get our test result:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ jest</div><div class="line"> PASS  __test__/sum.test.js</div><div class="line">  ✓ adds 1 + 2 to equal 3 (7ms)</div></pre></td></tr></table></figure></p>
+<h2 id="code-coverage"><a href="#code-coverage" class="headerlink" title="code coverage"></a>code coverage</h2><blockquote>
+<p>code coverage is basically about how much our code is been run.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">    &quot;test&quot;: &quot;jest --coverage&quot;,</div><div class="line">    &quot;test:watch&quot;: &quot;jest --watch&quot; //watch mode to quickly respond to your change</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>if some files are not been imported at all, jest will report that as well, but need to add this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&quot;jest&quot;: &#123;</div><div class="line">    &quot;collectCoverageFrom&quot;: [</div><div class="line">      &quot;*.js&quot;</div><div class="line">    ]</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h2 id="unit-testing"><a href="#unit-testing" class="headerlink" title="unit testing"></a>unit testing</h2><p>unit testing is for testing a single function whether could return a expected result.<br>you need to write test case for every possible conditions and give the input and the expected output.</p>
+<h2 id="end-to-end-test"><a href="#end-to-end-test" class="headerlink" title="end-to-end test"></a>end-to-end test</h2><blockquote>
+<p>End-to-end testing is a methodology used to test whether the flow of an application is performing as designed from start to finish. The purpose of carrying out end-to-end tests is to identify system dependencies and to ensure that the right information is passed between various system components and systems.</p>
+</blockquote>
+<h3 id="install-cypress"><a href="#install-cypress" class="headerlink" title="install cypress"></a>install <a href="https://docs.cypress.io/guides/getting-started/installing-cypress.html#npm-install" target="_blank" rel="external">cypress</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install cypress --save-dev</div></pre></td></tr></table></figure>
+<p>and open it:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(npm bin)/cypress open</div></pre></td></tr></table></figure></p>
+<h3 id="smoke-test"><a href="#smoke-test" class="headerlink" title="smoke test"></a>smoke test</h3><blockquote>
+<p>Smoke testing covers most of the major functions of the software but none of them in depth. The result of this test is used to decide whether to proceed with further testing. If the smoke test passes, go ahead with further testing. If it fails, halt further tests and ask for a new build with the required fixes. If an application is badly broken, detailed testing might be a waste of time and effort.</p>
+</blockquote>
+<p>Examples of smoke test: </p>
+<ol>
+<li>title</li>
+<li>page route</li>
+</ol>
+<h3 id="post-spec-test"><a href="#post-spec-test" class="headerlink" title="post_spec test"></a>post_spec test</h3><blockquote>
+<p>test for ‘post functions’</p>
+</blockquote>
+<h3 id="user-spec-test"><a href="#user-spec-test" class="headerlink" title="user_spec test"></a>user_spec test</h3><blockquote>
+<p>test from user’s prospective, need to think of what kinds of things does a user do that we want to make sure the system doesn’t break?</p>
+</blockquote>
+<p>Examples of user_spec test:<br>test from use case scenarios</p>
+<ol>
+<li>verify login</li>
+<li>modify profile</li>
+</ol>
+
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+      
+        <div class="nav-next">
+          <a href="/2017/09/23/React/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">DEER LU</h1>
+        <div class="custom-widget-content">
+          
+          许多人想登上月球，我却想多看看你。
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Contact</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/nengliangZ" class="icon icon-github" target="_blank">github</a>
+            
+              <a href="mailto:951107950zcg@gmail.com" class="icon icon-mail" target="_blank">mail</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Search</h1>
+        <div class="widget-text">
+          <form onSubmit="return appDaily.submitSearch('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>Hexo &copy; 2017</span>
+    
+      <span class="split">|</span>
+      <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+
+
+</body>
+
+</html>
