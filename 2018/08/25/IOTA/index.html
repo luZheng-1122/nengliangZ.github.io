@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="Deer Lu">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="Hexo"/>
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="Hexo"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="website" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>Hexo</title>
+
+
+  <link rel="shortcut icon" href="https://hexo.io/icon/favicon-96x96.png">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!----------------------------
+  https://github.com/GallenHu/hexo-theme-Daily
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="images/deer.png" alt="Hexo" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  archive
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            Untitled
+            
+          </h1>
+          <p class="posted-on">
+          2018-08-25
+          </p>
+          <div class="tags-links">
+            
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <h1 id="IOTA"><a href="#IOTA" class="headerlink" title="IOTA"></a>IOTA</h1><ul>
+<li><a href="#iota">IOTA</a><ul>
+<li><a href="#architecture">Architecture:</a></li>
+<li><a href="#consensus">Consensus:</a></li>
+<li><a href="#token-mechanism">Token mechanism:</a></li>
+<li><a href="#transaction-fee-can-be-involved-in-one-situation">transaction fee can be involved in one situation</a></li>
+<li><a href="#development-team">development team:</a></li>
+<li><a href="#other-concepts">Other concepts</a><ul>
+<li><a href="#coordinator-and-milestone">Coordinator and milestone</a></li>
+<li><a href="#snapshots">snapshots:</a></li>
+<li><a href="#seed-and-addresses">Seed and addresses</a></li>
+</ul>
+</li>
+<li><a href="#iota-current-issues">IOTA current issues</a></li>
+<li><a href="#setup-private-testnet">setup private testnet:</a><ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#run-a-full-iota-node">Run a full IOTA node</a></li>
+<li><a href="#add-neighbours">add neighbours</a></li>
+<li><a href="#connect-wallet">connect wallet</a></li>
+<li><a href="#transfer-value-to-another-address">transfer value to another address</a><ul>
+<li><a href="#use-client-api">use client API</a></li>
+</ul>
+</li>
+<li><a href="#coordinator">Coordinator:</a></li>
+</ul>
+</li>
+<li><a href="#other-resources">Other resources</a></li>
+</ul>
+</li>
+</ul>
+<p>Official website: <a href="https://www.iota.org/" target="_blank" rel="external">https://www.iota.org/</a></p>
+<p>White paper of its core ‘Tangle’ network: <a href="https://assets.ctfassets.net/r1dr6vzfxhev/2t4uxvsIqk0EUau6g2sw0g/45eae33637ca92f85dd9f4a3a218e1ec/iota1_4_3.pdf" target="_blank" rel="external">https://assets.ctfassets.net/r1dr6vzfxhev/2t4uxvsIqk0EUau6g2sw0g/45eae33637ca92f85dd9f4a3a218e1ec/iota1_4_3.pdf</a></p>
+<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture:"></a>Architecture:</h2><p>IOTA is a revolutionary new, next generation public distributed ledger that utilizes a novel invention, called a “Tangle”, at its core. The Tangle is a new data structure based on a Directed Acyclic Graph. As such it has no Blocks, no Chain and also no Miners. </p>
+<h2 id="Consensus"><a href="#Consensus" class="headerlink" title="Consensus:"></a>Consensus:</h2><p>There is no specific miner in the network. What this means is that each participant in the network that wants to make a transaction has to actively participate in the consensus of the network by approving 2 past transactions. Each transaction has its ‘weight’, there are some mechanism to calculate the weight value: in general, the weight value will get higher if the transaction gets more approvements, and higher weight value means higher confidence of this transaction.</p>
+<h2 id="Token-mechanism"><a href="#Token-mechanism" class="headerlink" title="Token mechanism:"></a>Token mechanism:</h2><p>In the beginning, there was an address with a balance that contained all of the tokens. The genesis transaction sent these tokens to several other “founder” addresses. No tokens will be created in the future, and there will be no mining.</p>
+<h2 id="transaction-fee-can-be-involved-in-one-situation"><a href="#transaction-fee-can-be-involved-in-one-situation" class="headerlink" title="transaction fee can be involved in one situation"></a>transaction fee can be involved in one situation</h2><p>if one node doesn’t have enough power to do PoW, such as a simple light bulb or even a smart phone that depends on its battery, it can still issue transactions with a transaction cost, paying to a trusted external validator.</p>
+<h2 id="development-team"><a href="#development-team" class="headerlink" title="development team:"></a>development team:</h2><p>the IOTA Founders developed the ideas behind IOTA and the Tangle architecture on which it is based and organized a crowdsale at the end of 2015 to help fund its development. The IOTA Foundation was established in Germany as a formal, non-profit organisation (‘gemeinnützige Stiftung’) in 2017 by Dominik Schiener and David Sønstebø.</p>
+<h2 id="Other-concepts"><a href="#Other-concepts" class="headerlink" title="Other concepts"></a>Other concepts</h2><h3 id="Coordinator-and-milestone"><a href="#Coordinator-and-milestone" class="headerlink" title="Coordinator and milestone"></a>Coordinator and milestone</h3><p>IOTA introduces Coordinator to solve the issue of limited full nodes.<br>To make it possible for the network to grow and protect it against certain attacks, IOTA currently relies on a coordinator. The coordinator checkpoints valid transactions, which are then validated by the entire network. The coordinator is being run by the IOTA Foundation in a multi-signature. The coordinator cannot go rogue, as he is being checked and validated by the entire network.<br>The coordinator issues periodic milestones, which reference valid transactions. On the mainnet, these milestones are issued every minute.<br>It should be noted that the coordinator will be made optional to the network by Summer, and then completely removed once the network is large enough.</p>
+<h3 id="snapshots"><a href="#snapshots" class="headerlink" title="snapshots:"></a>snapshots:</h3><p>IOTA introduces snapshots to reduce the memory burden of nodes connected to the tangle.<br><a href="https://iota.stackexchange.com/questions/373/whats-the-difference-between-milestones-and-snapshots" target="_blank" rel="external">whats-the-difference-between-milestones-and-snapshots</a></p>
+<h3 id="Seed-and-addresses"><a href="#Seed-and-addresses" class="headerlink" title="Seed and addresses"></a>Seed and addresses</h3><p>seed + index =&gt; address</p>
+<p>more details on: <a href="https://www.youtube.com/watch?v=U4vF0_Imz_0&amp;index=6&amp;list=PLmL13yqb6OxdIf6CQMHf7hUcDZBbxHyza" target="_blank" rel="external">https://www.youtube.com/watch?v=U4vF0_Imz_0&amp;index=6&amp;list=PLmL13yqb6OxdIf6CQMHf7hUcDZBbxHyza</a></p>
+<h2 id="IOTA-current-issues"><a href="#IOTA-current-issues" class="headerlink" title="IOTA current issues"></a>IOTA current issues</h2><ol>
+<li>network size is not enough, so IOTA introduces ‘coordinator’ to help maintain the security of the network.</li>
+<li>ineffective tip selection algorithm =&gt; blowball effect: Blowballs occur when a large number of transactions reference a single specific transaction, which typically turns out to be a milestone. This prevents the Tangle from growing organically, by “trapping” incoming transactions inside of the blowball.</li>
+<li>CTPS vary =&gt; small node amounts</li>
+</ol>
+<p>From: <a href="https://blog.iota.org/first-of-the-new-testnets-live-f8f41b99e9a3" target="_blank" rel="external">resource</a></p>
+<h2 id="setup-private-testnet"><a href="#setup-private-testnet" class="headerlink" title="setup private testnet:"></a>setup private testnet:</h2><p>The setup of private IOTA testnet mainly based on two repositories, one is <a href="https://github.com/iotaledger/iri/" target="_blank" rel="external">IOTA Reference Implementation</a>, another one is a <a href="https://github.com/schierlm/private-iota-testnet" target="_blank" rel="external">private iota testnet sample</a> contributed by Michael Schierl.</p>
+<p>In this testnet enviornment, we will build a network with two nodes. A light wallet can then connect to any one of the full node in the network and transfer value.</p>
+<p>According to IOTA’s current design, the empty network needs to have an initial distribution of the whole IOTA tokens, so we need to create a ‘snapshot’ file to initially distribute all tokens. Besides, a coordinator node needs to be maintained to create milestone in the testnet. Therefore, the steps to build the IOTA net would be:</p>
+<h3 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h3><ol>
+<li>Install Java 8</li>
+<li>Install Maven</li>
+</ol>
+<h3 id="Run-a-full-IOTA-node"><a href="#Run-a-full-IOTA-node" class="headerlink" title="Run a full IOTA node"></a>Run a full IOTA node</h3><p>1.Git Clone and compile <a href="https://github.com/schierlm/private-iota-testnet" target="_blank" rel="external">private iota testnet sample</a><br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mvn package</div></pre></td></tr></table></figure></p>
+<p>2.Create snapshoot<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar target/iota-testnet-tools-0.1-SNAPSHOT-jar-with-dependencies.jar SnapshotBuilder</div></pre></td></tr></table></figure></p>
+<p><strong>This interactive process will generate a seed with a few addresses, so you can distribute the token to this addresses. This will generate two files: ‘snapshot.txt’ and ‘snapshot.log’.</strong></p>
+<p>3.Git clone and compile <a href="https://github.com/iotaledger/iri/" target="_blank" rel="external">IRI</a> node(checkout version to v1.4.2.4 since the private iota testnet sample was developed based on this version) with specific API port and tcp/udp port, remember to copy ‘snapshot.txt’ in the same directory as ‘iri-1.4.2.4.jar’. then run:</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar iri-1.4.2.4.jar --testnet --testnet-no-coo-validation --snapshot=Snapshot.txt -p 14700 -t 15600 -u 14600 -n &apos;udp://127.0.0.1:24600&apos;</div></pre></td></tr></table></figure>
+<ul>
+<li>-p is API port, -t is tcp port, -u is udp port. -n is its neighbour’s tcp/udp port, if running more than one node in the same network, these there ports need to be all different. </li>
+</ul>
+<p>4.run coordinator to create milestone</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar target/iota-testnet-tools-0.1-SNAPSHOT-jar-with-dependencies.jar Coordinator localhost 14700</div></pre></td></tr></table></figure>
+<ul>
+<li>run coordinator again when you want to confrim the transaction in the testnet.</li>
+</ul>
+<h3 id="add-neighbours"><a href="#add-neighbours" class="headerlink" title="add neighbours"></a>add neighbours</h3><ol>
+<li><p>compile the same IRI node in another directory to avoid sharing the same resources. then run it with different port configuration</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar iri-1.4.2.4.jar --testnet --testnet-no-coo-validation --snapshot=Snapshot.txt -p 24700 -t 25600 -u 24600 -n &apos;udp://127.0.0.1:14600&apos;</div></pre></td></tr></table></figure>
+<ul>
+<li>more neighbours: the relation between neighbours can be multilateral. It is possible to have two irrelational nodes connect to the same node, these three nodes are all the part of the whole network.</li>
+<li>add neighbour dynamically: It is also possbile to add nerighbours after the node is running, but it needs to use other tools like Peer Manager to implement. Dynamically adding is not involved in this demo.</li>
+</ul>
+</li>
+</ol>
+<h3 id="connect-wallet"><a href="#connect-wallet" class="headerlink" title="connect wallet"></a>connect wallet</h3><p>1.Download the release version of the <a href="https://github.com/iotaledger/wallet/releases" target="_blank" rel="external">IOTA official wallet</a>, but it is also allowed to compile it from its <a href="https://github.com/iotaledger/wallet" target="_blank" rel="external">wallet repository</a>.<br>2.choose the wallet to be a light node and connect the wallet to the running full node by editing node configuration, change the custom host to your running full node address</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://localhost:14700</div></pre></td></tr></table></figure>
+<ul>
+<li>In this demo, the wallet works as a light node, which is a so-called client. It can also works as a full node and choose another full node as its neighbour.<br>3.login with the <code>seed1</code> that was generated in ‘snapshot.log’<br>4.attach the address, the balance will show</li>
+</ul>
+<h3 id="transfer-value-to-another-address"><a href="#transfer-value-to-another-address" class="headerlink" title="transfer value to another address"></a>transfer value to another address</h3><p>1.create a <code>seed2</code> on mac with command:</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /dev/urandom |LC_ALL=C tr -dc &apos;A-Z9&apos; | fold -w 81 | head -n 1</div></pre></td></tr></table></figure>
+<ul>
+<li>other seeds and addresses generation methods: <a href="https://www.youtube.com/watch?v=UClPU2e2MJI&amp;list=PLmL13yqb6OxdIf6CQMHf7hUcDZBbxHyza&amp;index=4" target="_blank" rel="external">https://www.youtube.com/watch?v=UClPU2e2MJI&amp;list=PLmL13yqb6OxdIf6CQMHf7hUcDZBbxHyza&amp;index=4</a></li>
+</ul>
+<p>2.get one address of <code>seed2</code>: <code>ADDRESSES2</code></p>
+<ul>
+<li>While the easiest way to get the addresses is logging into wallet with <code>seed2</code> and get the addresse, you can also use other ways to generate addresses that described in the above video.</li>
+</ul>
+<p>3.transfer money from <code>seed1</code> account to <code>ADDRESSES2</code>, then you can see this transaction is in the status of ‘pending’.</p>
+<p>4.running coordinator again to confirm this transaction.</p>
+<ul>
+<li>You can also use the IOTA client API to manipulate the node: <a href="https://iota.readme.io/reference#getnodeinfo" target="_blank" rel="external">https://iota.readme.io/reference#getnodeinfo</a></li>
+</ul>
+<h4 id="use-client-API"><a href="#use-client-API" class="headerlink" title="use client API"></a>use client API</h4><p>API document: <a href="https://iota.readme.io/v1.5.0/reference" target="_blank" rel="external">https://iota.readme.io/v1.5.0/reference</a><br>Git: <a href="https://github.com/iotaledger/iota.js" target="_blank" rel="external">https://github.com/iotaledger/iota.js</a></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">// Require the use of IOTA library</div><div class="line">const IOTA = require(&apos;iota.lib.js&apos;)</div><div class="line"></div><div class="line">// Create a new instance of the IOTA class object.</div><div class="line">// Use &apos;provider&apos; variable to specify which Full Node to talk to</div><div class="line">const iota = new IOTA(&#123; provider: &apos;https://nodes.devnet.iota.org:443&apos; &#125;)</div><div class="line"></div><div class="line">// Call the &apos;getNodeInfo call to check that the node is working</div><div class="line">iota.api.getNodeInfo((error, success) =&gt; &#123;</div><div class="line">  if (error) &#123;</div><div class="line">    console.log(error)</div><div class="line">  &#125; else &#123;</div><div class="line">    console.log(success)</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="Coordinator"><a href="#Coordinator" class="headerlink" title="Coordinator:"></a>Coordinator:</h3><ol>
+<li>transactions need to be confirmed by running coordinator</li>
+<li>in a well-settled network with a few nodes, if sending coordinator request to one node, all other nodes will update milestone as well.</li>
+</ol>
+<ul>
+<li>if you wish to run an empty network, just delete <code>/target/ixi</code>. <code>/target/testnetdb</code>, <code>/target/testnetdb.log</code> under the IRI directory.</li>
+</ul>
+<h2 id="Other-resources"><a href="#Other-resources" class="headerlink" title="Other resources"></a>Other resources</h2><ul>
+<li><a href="https://www.youtube.com/playlist?list=PLmL13yqb6OxdIf6CQMHf7hUcDZBbxHyza" target="_blank" rel="external">IOTA tutorials</a></li>
+<li>run a full node in docker git: <a href="https://github.com/iotaledger/iri" target="_blank" rel="external">https://github.com/iotaledger/iri</a></li>
+<li>node api document git: <a href="https://github.com/iotaledger/iota.lib.js#iota-javascript-library" target="_blank" rel="external">https://github.com/iotaledger/iota.lib.js#iota-javascript-library</a></li>
+<li>application data store demo, monetizing IoT data: <a href="https://data.iota.org/#/" target="_blank" rel="external">https://data.iota.org/#/</a></li>
+</ul>
+
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+      
+        <div class="nav-next">
+          <a href="/2018/08/25/DAG-research/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">DEER LU</h1>
+        <div class="custom-widget-content">
+          
+          许多人想登上月球，我却想多看看你。
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Contact</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/nengliangZ" class="icon icon-github" target="_blank">github</a>
+            
+              <a href="mailto:951107950zcg@gmail.com" class="icon icon-mail" target="_blank">mail</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Search</h1>
+        <div class="widget-text">
+          <form onSubmit="return appDaily.submitSearch('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>Hexo &copy; 2018</span>
+    
+      <span class="split">|</span>
+      <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+
+
+</body>
+
+</html>

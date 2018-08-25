@@ -16,7 +16,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="Anniversary One"/>
+      <meta property="og:title" content="Hexo"/>
   
   <!--Open Graph Description-->
   
@@ -24,7 +24,7 @@
   <meta property="og:site_name" content="Hexo"/>
   <!--Type page-->
   
-      <meta property="og:type" content="article" />
+      <meta property="og:type" content="website" />
   
   <!--Page Cover-->
   
@@ -33,7 +33,7 @@
 
   <!-- Title -->
   
-  <title>Anniversary One - Hexo</title>
+  <title>Hexo</title>
 
 
   <link rel="shortcut icon" href="https://hexo.io/icon/favicon-96x96.png">
@@ -113,11 +113,11 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            Anniversary One
+            Untitled
             
           </h1>
           <p class="posted-on">
-          2016-09-14
+          2018-08-25
           </p>
           <div class="tags-links">
             
@@ -127,14 +127,21 @@
         </div>
         <!-- Post Main Content -->
         <div class="entry-content">
-          <h2 id="他和她"><a href="#他和她" class="headerlink" title="他和她"></a>他和她</h2><p>西窗的雨 轻轻地吟唱<br>那美丽年华 今向何方<br>愿若流水 无心何方<br>再化作云雨 某夜倚你西窗</p>
-<p>22岁的时候，我认识了一个人。<br>他不高不帅，还胖胖的。<br>他不爱说话，认识了一年没说超过十句。<br>他连搭讪都不会，想约我出去微信草稿改了好几天。<br>但是幸好，他还是鼓起勇气约了我，所以我们没有错过。</p>
-<p>他和我认识的男生都不一样，想起他的时候我就想哭，胸前总是涌起奇怪的感情，也不知道为啥。<br>他说话的时候会让我想起王家卫的电影，台词不多，但一句顶十句，听不懂的十句也没用，听得懂的一句就够了。<br>我听歌的时候也会想起他，有些歌的感觉和他很像，我也不知道为什么人会和歌像。<br>我洗碗的时候也会想他，这个我知道为啥！因为我不想洗碗。<br>我看到大街上抱孩子的爸爸的时候也会想起他，我觉得他以后会是个好爸爸。</p>
-<p>他是个南方人。<br>以前说起南方，我就会想到烟雨、诗词、琵琶、歌女、没暖气的冬天和剁椒鱼头。<br>现在说起南方，我就会想起他，温润绵长，像杭州的雨。<br>如果有暖气和他，我可能也会爱上南方吧。</p>
-<p>今天我和他在一起一年了。<br>后面几个月都在异地恋，而且还要持续很长时间。<br>我们掰着手数着还有几天可以见面，盘算着仅有的假期要去哪儿。<br>但如果以后都要在一起，这几年的分离也不算太长吧。</p>
-<p>一个人的生活总是会有点孤独的。<br>学习本来就是一个寂寞的事。我记得很久之前我和他说过。<br>刚上大学的时候不知道学习是为了什么，现在知道了。<br>两个人各自孤独的学着，是为了以后在一起的时候能够不那么孤独。</p>
-<p>我相信我们可以过上想要的生活。<br>上班，上商场，上床，下厨房。</p>
-<p>一周年快乐！ </p>
+          <h2 id="What-is-DAG"><a href="#What-is-DAG" class="headerlink" title="What is DAG"></a>What is DAG</h2><p><img src="./img/DAG.png" alt="DAG Structure"></p>
+<p>A distributed-ledger technology that links transactions together directly without blocks.</p>
+<p>DAG combines blocks and transactions together. Make every transaction directly involved in maintaining the sequences. In DAG, ‘block’ and ‘transaction’ are often used interchangeably. This makes it blockless and more efficient.  </p>
+<h3 id="advantages"><a href="#advantages" class="headerlink" title="advantages:"></a>advantages:</h3><ol>
+<li>High throughput: since its asynchronize machanism, throughput will increase.</li>
+<li>Low fees, friendly to Small Payments: With the advancement of DAG, we’re looking at a future where high functioning and minimum transaction fee chains are possible. That means users can send micro-payments without heavy fees like Bitcoin or Ethereum. [from …]</li>
+</ol>
+<h3 id="disadvantages"><a href="#disadvantages" class="headerlink" title="disadvantages:"></a>disadvantages:</h3><ol>
+<li>实现复杂</li>
+<li>没有reference关系的节点没有时序性，加减不受影响但无法处理复杂计算。如果要处理复杂计算, 或者加入Smart Contract，就要加入额外的能确认先后顺序的机制，如byteball里面的mainchain机制.</li>
+</ol>
+<h3 id="resources"><a href="#resources" class="headerlink" title="resources:"></a>resources:</h3><ol>
+<li><a href="http://m.8btc.com/blockchain-concensus-mech?from=groupmessage&amp;isappinstalled=0" target="_blank" rel="external">区块链共识机制分析——论PoW，PoS，DPos和DAG的优缺点</a></li>
+</ol>
+<h3 id="Project-comparision-table"><a href="#Project-comparision-table" class="headerlink" title="Project comparision table"></a>Project comparision table</h3><p>特点（没有block，没有等待时间，没有miner），优点（适合high throughput，费用低），缺点（没有reference关系的节点没有时序性，加减不受影响但无法处理复杂计算。如果要处理复杂计算，就要加入额外的能确认先后顺序的机制，如byteball里面的mainchain机制）<br>IOTA：只能处理简单计算，验证前两条，当前主网中有coordinator节点辅助验证。会导致速度低。节点越多性能越高。<br>NANO：只能处理简单计算，每个account一条链，每个node保存所有account的数据。<br>Byteball：支持smartcontract 逻辑比较复杂，有witness帮助维护mainchain</p>
 
         </div>
       </article>
@@ -154,9 +161,13 @@
     <div class="nav-links">
       
         <div class="nav-previous">
-          <a href="/2017/08/29/Two/" rel="prev"><span class="meta-arraw meta-arraw-left"></span> Older Posts</a>
+          <a href="/2018/08/25/IOTA/" rel="prev"><span class="meta-arraw meta-arraw-left"></span> Older Posts</a>
         </div>
       
+      
+        <div class="nav-next">
+          <a href="/2017/10/10/React/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
       
     </div>
 
